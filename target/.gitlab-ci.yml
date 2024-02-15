@@ -1,0 +1,18 @@
+stages:
+  - build
+  - test
+
+build_job:
+   tags:
+    - shared
+  stage: build
+  script:
+    - echo "Проект собрался"
+
+
+test_job:
+   tags:
+    - shared
+  stage: test
+  script:
+      - echo "Тесты прошли!"
