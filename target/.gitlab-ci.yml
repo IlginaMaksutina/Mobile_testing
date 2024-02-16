@@ -15,4 +15,4 @@ test_job:
     - shared
   stage: test
   script:
-      - echo "Тесты прошли!"
+      - echo "Тесты  прошли!"
