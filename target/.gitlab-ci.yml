@@ -1,18 +1,31 @@
-stages:
-  - build
-  - test
+   stages:
+     - build
+     - test
+   build_job:
+     tags:
+       - shared
+     stage: build
+     only:
+       - master
+       - develop
 
-build_job:
-   tags:
-    - shared
-  stage: build
-  script:
-    - echo "Проект собрался"
+     script:
+       - echo "Проект собрался"
 
+   test_job:
+     tags:
+       - shared
+     stage: test
 
-test_job:
-   tags:
-    - shared
-  stage: test
-  script:
-      - echo "Тесты прошли!"
+     script:
+       - echo "Тест прошел!"
+
+   test_unit_job:
+     tags:
+       - shared
+     stage: test
+
+     script:
+       - echo "Unit tests!"
+    when: manual
+
